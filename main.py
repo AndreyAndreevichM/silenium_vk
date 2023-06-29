@@ -13,18 +13,24 @@ try:
     driver.get('https://vk.com')
     time.sleep(5)
 
-    email_input = driver.find_element(By.ID, 'index_email')
+    email_input = driver.find_element(By.CLASS_NAME, 'VkIdForm__input')
+
+    # email_input = driver.find_element(By.ID, 'index_email')
     email_input.clear()
     email_input.send_keys('79885001670')
     email_input.send_keys(Keys.ENTER)
     time.sleep(5)
 
-    pass_btn = driver.find_element_by_css_selector('vkc__PureButton__button vkc__Link__link vkc__Link__primary vkc__Bottom__switchToPassword')
-    pass_btn.click()
+    # // *[ @ id = "root"] / div / div / div / div / div[1] / div[2] / div / div / div / form / div[4] / div / button[2]
+    # root > div > div > div > div > div.vkc__AuthRoot__root.vkuiSplitLayout__inner > div.vkc__AuthRoot__col.vkc__AuthRoot__contentCol.vkuiSplitCol > div > div > div > form > div.vkc__AuthSimpleScreen__bottom > div > button.vkc__PureButton__button.vkc__Link__link.vkc__Link__primary.vkc__Bottom__switchToPassword
     # password_input = driver.find_element(By.CLASS_NAME, 'vkc__PureButton__button vkc__Link__link vkc__Link__primary vkc__Bottom__switchToPassword')
     # password_input.clear()
     # password_input.send_keys(Keys.ENTER)
-    time.sleep(5)
+
+    # pass_btn = driver.find_element(By.CSS_SELECTOR,
+    #                                '#root > div > div > div > div > div.vkc__AuthRoot__root.vkuiSplitLayout__inner > div.vkc__AuthRoot__col.vkc__AuthRoot__contentCol.vkuiSplitCol > div > div > div > form > div.vkc__AuthSimpleScreen__bottom > div > button.vkc__PureButton__button.vkc__Link__link.vkc__Link__primary.vkc__Bottom__switchToPassword')
+    # pass_btn.click()
+    # time.sleep(5)
 
 
 except Exception as ex:
